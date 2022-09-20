@@ -1,0 +1,58 @@
+//using while loop
+#include <stdio.h>
+#include <string.h>
+
+void main()
+{
+    int a[7] = {6,2,7,5,9,10,5};
+    int i=0, j=6,flag=0;
+
+        while (1)
+        {
+            if (i < 7 && flag == 0)  // printing in original order
+            {
+                printf("%d,",a[i]);
+                i++;
+            }
+            if (i == 7)  // marking flag for completion of original order
+            {
+                flag = 1;
+                printf("\n");
+                i--;
+            }
+            if (i >= 0 && flag == 1)  // printing in reverse order
+            {
+                printf("%d,",a[i]);
+                i--;
+            }
+            if (i == -1 && flag == 1)  // termination the program
+            break;
+        }
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+
+//Using for loop
+#include <stdio.h>
+
+void main()
+{
+    int a[7] = {6,2,7,5,9,10,5};
+    int i, j=6;
+    for (i=0; j >= 0; i++) 
+    {
+        if (i < 7)      // prinint in original order
+        {
+            printf("%d,",a[i]);
+            continue;
+        }
+        if (i == 7)     // new line after completion of original line
+        {
+            printf("\n");
+        }
+        printf("%d,",a[j]);     // printing in reverse order
+        j--;
+        
+    }
+}
